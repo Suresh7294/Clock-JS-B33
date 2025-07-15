@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <script src="clock.js"></script>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #00f260, #0575e6, #845ec2,#00f260);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .clock-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    #clock {
+      font-size: 80px;
+      padding: 20px 40px;
+      color:  #ffffff;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      border:none;
+      border-radius: 15px;
+      text-shadow: 10px 0px 5px #000000;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    #clock:hover{
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      color: #000000;
+      text-shadow: 10px 0px 5px #ffffff;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      border: none;
+      border-radius: 11px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform:translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .5);
+      background: linear-gradient(155deg,#ff6a00, #ffffff, #02c5f6, #ffffff,#ff6a00);
+      color: #4105f7;
+    }
+
+    .btn:active {
+      transform: scale(0.85);
+    }
+    .beat {
+  animation: beat 0.25s ease;
+}
+
+@keyframes beat {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+  </style>
+</head>
+<body>
+
+  <div class="clock-container">
+    <input type="text" id="clock" readonly />
+    <div class="btn-group">
+      <button class="btn" onclick="start()">Start</button>
+      <button class="btn" onclick="stop()">Stop</button>
+    </div>
+  </div>
+
+</body>
+</html>
